@@ -1,0 +1,51 @@
+
+
+.Book{
+font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+.Book::before{
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 15%;
+    background-color: #d13714;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.bb:hover .Book::before{
+    height: 26%
+    
+}
+
+.favorite{
+font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+background-image: linear-gradient(to right, #d60000, #ffffff);
+color: transparent;
+background-clip: text;
+
+
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #01ff09;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, 0.718);
+}
+main {
+    background-image: url(../image/544f1f05f141458237dbcbbfac3a7b9c.gif) !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: 0.5;
+}
