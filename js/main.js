@@ -3,6 +3,8 @@ var siteUrl = document.getElementById("websiteUrl");
 var inputnamevalid = document.getElementById("site-name");
 var inputurlvalid = document.getElementById("websiteUrl");
 //
+ var mess3 = document.getElementById("mess3");
+ var mess2 = document.getElementById("mess2");
 var allSites = [];
 
 
@@ -27,6 +29,47 @@ function testisNamefound() {
       allSites[i].sitename == siteName.value ||
       allSites[i].siteurl == siteUrl.value
     ) {
+      if (
+        allSites[i].sitename == siteName.value &&
+        allSites[i].siteurl == siteUrl.value
+      ) {
+        
+        mess2.classList.remove("d-none");
+        mess3.classList.remove("d-none")
+      
+      }
+      else if (allSites[i].sitename == siteName.value) {
+  mess2.classList.remove("d-none");
+      }
+      else if (allSites[i].siteurl == siteUrl.value) {
+        mess3.classList.remove("d-none");
+      }
+      
+      // switch (true) {
+      //   case (allSites[i].sitename == siteName.value &&
+      //     allSites[i].siteurl == siteUrl.value):
+      //     // code block
+      //     mess1.classList.remove("d-none");
+      //     mess.classList.remove("d-none");
+      //     break;
+      //   case allSites[i].sitename == siteName.value:
+      //     // code block
+      //     mess1.classList.remove("d-none");
+      //     console.log("ddddd");
+      //     break;
+      //   case allSites[i].siteurl == siteUrl.value:
+      //     // code block
+      //     mess.classList.remove("d-none");
+      //     console.log("vvvvvvv");
+      //     break;
+      //   // default:
+      //   //   // code block
+      //   //   return (
+      //   //     mess1.classList.remove("d-none") + mess.classList.remove("d-none")
+      //   //   );
+      // }
+
+
       //inputnamevalid.classList.add("is-invalid");
       // inputurlvalid.classList.add("is-invalid");
       console.log("nnn")
@@ -43,8 +86,12 @@ function addSite() {
       ///// حاولت كتير والله  بس مش عاف فين المشكله بص كده في الكونسول ///// مضيفش 
       // ما ضيفتش اهو
       console.log("fffff");
-    //  mess.classList.remove("d-none");
-      return mess1.classList.remove("d-none") + mess.classList.remove("d-none");
+      //  mess.classList.remove("d-none");
+      
+
+
+      
+    //  return mess1.classList.remove("d-none") + mess.classList.remove("d-none");
     
     }
   else  {
@@ -119,11 +166,15 @@ function validationNameSite() {
     mess1.classList.add("d-none");
     inputnamevalid.classList.add("is-valid");
     inputnamevalid.classList.remove("is-invalid");
+    mess2.classList.add("d-none");
+      
+  
     return true;
   } else {
     mess1.classList.remove("d-none");
     inputnamevalid.classList.add("is-invalid");
     inputnamevalid.classList.remove("is-valid");
+        mess2.classList.add("d-none");
     return false;
   }
 }
@@ -137,13 +188,15 @@ function validationurlSite() {
   if (urlRegex.test(urle)) {
       mess.classList.add("d-none");
       inputurlvalid.classList.add("is-valid");
-      inputurlvalid.classList.remove("is-invalid");
+    inputurlvalid.classList.remove("is-invalid");
+    mess3.classList.add("d-none");
     return true;
   }
   else {
     mess.classList.remove("d-none");
     inputurlvalid.classList.remove("is-valid");
     inputurlvalid.classList.add("is-invalid");
+    mess3.classList.add("d-none");
     return false;
   }
 }
