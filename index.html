@@ -5,33 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookMark</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+<!-- ============google font CDN===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap"
         rel="stylesheet">
-
+<!--============= font awsome======= -->
     <link rel="stylesheet" href="css/all.min.css">
+    <!--======== media quary file=========== -->
     <link rel="stylesheet" href="css/query-style.css">
+    <!-- =======link boot strabe css file ======== -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--=============index/main css file =========== -->
     <link rel="stylesheet" href="css/style.css">
+    <!--========== add icon in title=========== -->
     <link rel="icon" href="image/favicon.ico">
 </head>
 
-<body >
-<!-- bg-danger-subtle -->
+<body>
 
     <main class=" py-4 text-white">
 
         <div class="container text-center  ">
-            <div class=" bb d-inline-block "><h1 class="Book py-5  position-relative z-2">Bookmarker</h1></div>
+            <div class=" bb d-inline-block ">
+                <h1 class="Book py-5  position-relative z-2">Bookmarker</h1>
+            </div>
 
             <div class="bookmark-body    border-top    pt-4 pb-2">
                 <h3 class=" favorite">
@@ -44,36 +49,35 @@
                 <label for="site-name" class=" fw-bold  mt-2">
                     <i class="fa-solid fa-book-bookmark pe-2"></i>
                     Site Name</label>
-                <input oninput="validationNameSite()"   type="text" id="site-name" class="form-control " placeholder="Bookmark Name">
-            <p id="mess1" class="alert alert-danger d-none">Hint About How To Write The Right Name OR May Name is in locall storage.</p>
-
+                <input oninput=" validationNameSite()" type="text" id="site-name" class="form-control "
+                    placeholder="Bookmark Name">
+                <p id="mess1" class="alert alert-danger d-none">Hint About How To Write The Right Name OR May Name is in
+                    locall storage.</p>
             </div>
             <div class="site-url d-flex flex-column row-gap-2  align-items-start py-4 ">
                 <label for="site-url" class="   fw-bold mt-2">
                     <i class="fa-solid fa-link pe-2"></i>
                     Site URL</label>
-                <input  oninput="validationurlSite()"  type="text" id="websiteUrl" class="form-control" placeholder="Website URL">
-
-                <p  id="mess" class="alert alert-danger d-none">Hostinger’s complete URL is https://www.hostinger.com/ and entering it in a browser’s address bar directs users to our
-                website. The same rule applies to https://www.microsoft.com/ and https://www.linux.org/.</p>
+                <input oninput="validationurlSite()" type="text" id="websiteUrl" class="form-control"
+                    placeholder="Website URL">
+                <p id="mess" class="alert alert-danger d-none">Hostinger’s complete URL is https://www.hostinger.com/
+                    and entering it in a browser’s address bar directs users to our
+                    website. The same rule applies to https://www.microsoft.com/ and https://www.linux.org/.</p>
             </div>
-
-
             <button type="button" onclick="addSite()" class="btn btn-danger px-5 mb-4">Submit</button>
         </div>
-
         <div class="container  border-top border-2 border-black">
             <div class=" text-dark  table-website rounded-2">
                 <div class="row text-center bg-white py-2 mt-3 border-bottom rounded-top-3">
                     <div class="col-3 fw-bold">index</div>
                     <div class="col-3 fw-bold">Website Name</div>
-                    <div   class="col-3 fw-bold">Visit</div>
+                    <div class="col-3 fw-bold">Visit</div>
                     <div class="col-3 fw-bold">Delete</div>
-
                 </div>
-            </div></div>
-            <div id="newWebsite" class="container ">
-                <!-- <div class="row text-center bg-white py-2  border-bottom">
+            </div>
+        </div>
+        <div id="newWebsite" class="container ">
+            <!-- <div class="row text-center bg-white py-2  border-bottom">
                     <div class="col-3">
                         <div id="counterWebsites" class=" fw-semibold">1</div>
                     </div>
@@ -89,17 +93,15 @@
                                 class="btn btn-danger pt"><i class="fa-solid fa-trash"></i> Delete</a> </div>
                     </div>
                 </div> -->
-
-
-
-            </div>
+        </div>
 
     </main>
 
 
 
-
-    <script src="js/bootstrap.bundle.min.js"></script>
+<!-- ===============boot strab js file=========== -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- ========main js file =============-->
     <script src="js/main.js"></script>
 </body>
 
