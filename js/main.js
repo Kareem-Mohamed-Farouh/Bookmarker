@@ -3,10 +3,9 @@ var siteUrl = document.getElementById("websiteUrl");
 var inputnamevalid = document.getElementById("site-name");
 var inputurlvalid = document.getElementById("websiteUrl");
 //
- var mess3 = document.getElementById("mess3");
- var mess2 = document.getElementById("mess2");
+var mess3 = document.getElementById("mess3");
+var mess2 = document.getElementById("mess2");
 var allSites = [];
-
 
 var found = localStorage.getItem("websites");
 if (found != undefined) {
@@ -23,78 +22,122 @@ if (found != undefined) {
 function testisNamefound() {
   for (var i = 0; i < allSites.length; i++) {
     //test statment
-    console.log(allSites[i].sitename == siteName.value);
-    console.log(allSites[i].siteurl == siteUrl.value);
+    //console.log(allSites[i].sitename == siteName.value);
+   // console.log(allSites[i].siteurl == siteUrl.value);
+   ///*other way*////
+    // if (
+    //   allSites[i].sitename == siteName.value ||
+    //   allSites[i].siteurl == siteUrl.value
+    // ) {
+    //     if (
+    //       allSites[i].sitename == siteName.value &&
+    //       allSites[i].siteurl == siteUrl.value
+    //     ) {
+
+    //       mess2.classList.remove("d-none");
+    //       mess3.classList.remove("d-none")
+
+    //     }
+    //     else if (allSites[i].sitename == siteName.value) {
+    // mess2.classList.remove("d-none");
+    //     }
+    //     else if (allSites[i].siteurl == siteUrl.value) {
+    //       mess3.classList.remove("d-none");
+    //     }
+
     if (
       allSites[i].sitename == siteName.value ||
       allSites[i].siteurl == siteUrl.value
     ) {
-      if (
-        allSites[i].sitename == siteName.value &&
-        allSites[i].siteurl == siteUrl.value
-      ) {
-        
-        mess2.classList.remove("d-none");
-        mess3.classList.remove("d-none")
-      
+      if (allSites[i].sitename != siteName.value) {
+        if (allSites[i].siteurl == siteUrl.value) {
+          allert2();
+        }
+    
+      } else {
+        allert1();
       }
-      else if (allSites[i].sitename == siteName.value) {
-  mess2.classList.remove("d-none");
-      }
-      else if (allSites[i].siteurl == siteUrl.value) {
-        mess3.classList.remove("d-none");
-      }
-      
-      // switch (true) {
-      //   case (allSites[i].sitename == siteName.value &&
-      //     allSites[i].siteurl == siteUrl.value):
-      //     // code block
-      //     mess1.classList.remove("d-none");
-      //     mess.classList.remove("d-none");
-      //     break;
-      //   case allSites[i].sitename == siteName.value:
-      //     // code block
-      //     mess1.classList.remove("d-none");
-      //     console.log("ddddd");
-      //     break;
-      //   case allSites[i].siteurl == siteUrl.value:
-      //     // code block
-      //     mess.classList.remove("d-none");
-      //     console.log("vvvvvvv");
-      //     break;
-      //   // default:
-      //   //   // code block
-      //   //   return (
-      //   //     mess1.classList.remove("d-none") + mess.classList.remove("d-none")
-      //   //   );
-      // }
-
-
-      //inputnamevalid.classList.add("is-invalid");
-      // inputurlvalid.classList.add("is-invalid");
-      console.log("nnn")
+      console.log("true");
       return true;
-    } 
-  
+    }else {
+      allert3();
+    }
+    
   }
 }
+
+function allert1() {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: " Name existing before !",
+    footer: "<h6> finde your website in list you saved <h6>",
+  });
+}
+
+function allert2() {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "URL You Entered is Existing before!",
+    footer: "<h6 >change- finde your website</h6>",
+  });
+}
+
+function allert3() {
+  Swal.fire({
+    icon: "success",
+    title: "Oops...",
+    text: " You add websie sussefull!",
+    footer: "<h6 >change- finde your website</h6>",
+  });
+}
+
+// if (
+//   allSites[i].sitename == siteName.value &&
+//   allSites[i].siteurl == siteUrl.value
+// ) {
+//   mess2.classList.remove("d-none");
+//   mess3.classList.remove("d-none");
+// }
+// switch (true) {
+//   case (allSites[i].sitename == siteName.value &&
+//     allSites[i].siteurl == siteUrl.value):
+//     // code block
+//     mess1.classList.remove("d-none");
+//     mess.classList.remove("d-none");
+//     break;
+//   case allSites[i].sitename == siteName.value:
+//     // code block
+//     mess1.classList.remove("d-none");
+//     console.log("ddddd");
+//     break;
+//   case allSites[i].siteurl == siteUrl.value:
+//     // code block
+//     mess.classList.remove("d-none");
+//     console.log("vvvvvvv");
+//     break;
+//   // default:
+//   //   // code block
+//   //   return (
+//   //     mess1.classList.remove("d-none") + mess.classList.remove("d-none")
+//   //   );
+// }
+
+//inputnamevalid.classList.add("is-invalid");
+// inputurlvalid.classList.add("is-invalid");
+
 //===============adding site=====================
 function addSite() {
-  
   if (validationNameSite() && validationurlSite()) {
     if (testisNamefound() === true) {
-      ///// حاولت كتير والله  بس مش عاف فين المشكله بص كده في الكونسول ///// مضيفش 
+      ///// حاولت كتير والله  بس مش عاف فين المشكله بص كده في الكونسول ///// مضيفش
       // ما ضيفتش اهو
       console.log("fffff");
       //  mess.classList.remove("d-none");
-      
 
-
-      
-    //  return mess1.classList.remove("d-none") + mess.classList.remove("d-none");
-    
-    }
-  else  {
+      //  return mess1.classList.remove("d-none") + mess.classList.remove("d-none");
+    } else {
       var onesite = {
         sitename: siteName.value,
         siteurl: siteUrl.value,
@@ -104,10 +147,9 @@ function addSite() {
       displaySite();
       console.log(allSites);
       clearinput();
-     }
+    }
   }
- 
-  }
+}
 
 //========  enddd add =========
 
@@ -145,8 +187,8 @@ function displaySite() {
 function clearinput() {
   siteName.value = null;
   siteUrl.value = null;
-    inputurlvalid.classList.remove("is-valid");
-    inputnamevalid.classList.remove("is-valid");
+  inputurlvalid.classList.remove("is-valid");
+  inputnamevalid.classList.remove("is-valid");
 }
 //==========function to delete  one site that you want to delete ===========
 
@@ -167,14 +209,13 @@ function validationNameSite() {
     inputnamevalid.classList.add("is-valid");
     inputnamevalid.classList.remove("is-invalid");
     mess2.classList.add("d-none");
-      
-  
+
     return true;
   } else {
     mess1.classList.remove("d-none");
     inputnamevalid.classList.add("is-invalid");
     inputnamevalid.classList.remove("is-valid");
-        mess2.classList.add("d-none");
+    mess2.classList.add("d-none");
     return false;
   }
 }
@@ -182,17 +223,17 @@ function validationNameSite() {
 //validation when you write in input about Site URL
 function validationurlSite() {
   // var urlRegex = /^https\:\/\/www\.[\w\W]{0,20}\.com[\w\W]{0,}$/i;
-  var urlRegex =/^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)$/g;
+  var urlRegex =
+    /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)$/g;
   var mess = document.getElementById("mess");
   var urle = siteUrl.value;
   if (urlRegex.test(urle)) {
-      mess.classList.add("d-none");
-      inputurlvalid.classList.add("is-valid");
+    mess.classList.add("d-none");
+    inputurlvalid.classList.add("is-valid");
     inputurlvalid.classList.remove("is-invalid");
     mess3.classList.add("d-none");
     return true;
-  }
-  else {
+  } else {
     mess.classList.remove("d-none");
     inputurlvalid.classList.remove("is-valid");
     inputurlvalid.classList.add("is-invalid");
