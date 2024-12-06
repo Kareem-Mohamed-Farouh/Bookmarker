@@ -84,12 +84,14 @@ function allert2() {
   });
 }
 
+
+
 function allert3() {
   Swal.fire({
     icon: "success",
     title: "Oooh.",
     text: " You added your website successfully!",
-    footer: "<h6 >Design by Kareem Farouh *_-</h6>",
+    footer: "<h6 >Design by <strong>Kareem Farouh *_-</strong></h6>",
   });
 }
 
