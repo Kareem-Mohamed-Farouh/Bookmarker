@@ -87,9 +87,9 @@ function allert2() {
 function allert3() {
   Swal.fire({
     icon: "success",
-    title: "Oops...",
-    text: " You add websie sussefull!",
-    footer: "<h6 >change- finde your website</h6>",
+    title: "Oooh.",
+    text: " You added your website successfully!",
+    footer: "<h6 >Design by Kareem Farouh *_-</h6>",
   });
 }
 
