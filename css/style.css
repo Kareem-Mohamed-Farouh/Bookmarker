@@ -48,4 +48,5 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: 0.5;
+  min-height: 100vh;
 }
